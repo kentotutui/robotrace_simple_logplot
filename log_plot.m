@@ -4,7 +4,7 @@ theta = data(:, 2);
 
 % データが有るところだけ抽出
 distance = nonzeros(distance);
-theta = theta(1:size(distance));
+theta = theta(1:length(distance));
 
 theta_adj = theta .* 1;
 
@@ -14,7 +14,7 @@ th = 0;
 
 X = [];
 Y = [];
-for i = 1:size(distance)
+for i = 1:length(distance)
     x = x + distance(i) * cos(th + theta_adj(i)/2);
     y = y + distance(i) * sin(th + theta_adj(i)/2);
     th = th + theta_adj(i);
